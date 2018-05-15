@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from mock import patch, MagicMock
+from unittest.mock import patch, MagicMock
 from botocore.exceptions import ClientError
 from importlib import import_module
 from unittest import skipIf
