@@ -1,11 +1,11 @@
-## Django Warrant
+# Django Warrant [![Build Status](https://travis-ci.org/y3g0r/django-warrant.svg?branch=master)](https://travis-ci.org/y3g0r/django-warrant)
 
-### Install
+## Install
 
 `pip install django-warrant`
 
-### Django Auth Backend
-#### Using the CognitoBackend
+## Django Auth Backend
+### Using the CognitoBackend
 1. In your Django project settings file, add the dotted path of
 `CognitoBackend` to your list of `AUTHENTICATION_BACKENDS`.
 Keep in mind that Django will attempt to authenticate a user using
@@ -43,7 +43,7 @@ Defaults to `True`.
 to the AWS access keys you would like to use.
 Defaults to `None`, which will use the default credentials in your `~/.aws/credentials` file.
 
-#### CognitoBackend Behavior
+### CognitoBackend Behavior
 Since the username of a Cognito User can never change,
 this is used by the backend to match a Cognito User with a local Django
 User.
@@ -64,7 +64,7 @@ Otherwise, this is done via the `user_logged_in` signal.
 Check the cdu directory for an example app with a login and
 user details page.
 
-#### Customizing CognitoBackend Behavior
+### Customizing CognitoBackend Behavior
 Setting the Django setting `COGNITO_CREATE_UNKNOWN_USERS` to `False` prevents the backend
 from creating a new local Django user and only updates existing users.
 
@@ -72,9 +72,9 @@ If you create your own backend class that inhereits from `CognitoBackend`, you m
 want to also create your own custom `user_logged_in` so that it checks
 for the name of your custom class.
 
-### API Gateway Integration
+## API Gateway Integration
 
-#### API Key Middleware
+### API Key Middleware
 The `APIKeyMiddleware` checks for a `HTTP_AUTHORIZATION_ID` header
 in the request and attaches it to the request object as `api_key`.
 
